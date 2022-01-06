@@ -193,6 +193,7 @@ nav div a:hover::after {
 }
 .slideshow__desc div img {
   width: 2vw;
+  cursor: pointer;
 }
 .slideshow__desc div:hover {
   opacity: 0.6;

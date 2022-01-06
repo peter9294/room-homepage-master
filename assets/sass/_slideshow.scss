@@ -49,6 +49,7 @@
       }
       img {
         width: 2vw;
+        cursor: pointer;
       }
       &:hover {
         opacity: 0.6;
@@ -86,7 +87,6 @@
   display: none;
 }
 
-
 @media screen and (max-width: 700px) {
   .slideshow {
     display: grid;
@@ -116,28 +116,28 @@
         }
       }
       @mixin arrow($arrow-direction, $right) {
-    $size: 15vw;
-    width: $size;
-    height: $size;
-    bottom: 96vw;
-    right: $right;
-    left: initial;
-    background-color: variables.$black;
-    background-image: url($arrow-direction);
-    background-repeat: no-repeat;
-    background-size: 20%;
-    background-position: center center;
-    transition: 0.3s ease-out;
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-  .left-arrow {
-    @include arrow("./assets/images/icon-angle-left.svg", 15vw);
-  }
-  .right-arrow {
-    @include arrow("./assets/images/icon-angle-right.svg", 0);
-  }
+        $size: 15vw;
+        width: $size;
+        height: $size;
+        bottom: 96vw;
+        right: $right;
+        left: initial;
+        background-color: variables.$black;
+        background-image: url($arrow-direction);
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position: center center;
+        transition: 0.3s ease-out;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .left-arrow {
+        @include arrow("./assets/images/icon-angle-left.svg", 15vw);
+      }
+      .right-arrow {
+        @include arrow("./assets/images/icon-angle-right.svg", 0);
+      }
     }
   }
   .slideshow-img-js {
