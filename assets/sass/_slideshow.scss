@@ -1,0 +1,150 @@
+@use "./utilities/variables";
+.fade-in {
+  animation: fadeIn ease 1.4s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slideshow {
+  display: grid;
+  grid-template-columns: 1.42fr 1fr;
+  grid-template-rows: 1fr;
+  img {
+    width: 100%;
+  }
+
+  &__desc {
+    position: relative;
+    background-color: variables.$white;
+    height: 100%;
+    padding: 6vw;
+    box-sizing: border-box;
+    h1 {
+      font-size: 2.6vw;
+    }
+    p {
+      color: variables.$dark-gray;
+      line-height: 1.4vw;
+    }
+    div {
+      position: absolute;
+      bottom: 11vw;
+      padding-top: 1vw;
+      display: flex;
+      gap: 2vw;
+      transition: 0.3s ease-out;
+      button {
+        border: none;
+        background: none;
+        font-weight: 700;
+        letter-spacing: 0.5vw;
+        padding: 0;
+        font-size: 0.8vw;
+        cursor: pointer;
+      }
+      img {
+        width: 2vw;
+      }
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+  @mixin arrow($arrow-direction, $left) {
+    $size: 5.5vw;
+    content: "";
+    cursor: pointer;
+    position: absolute;
+    width: $size;
+    height: $size;
+    bottom: 0;
+    left: $left;
+    background-color: variables.$black;
+    background-image: url($arrow-direction);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: center center;
+    transition: 0.3s ease-out;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .left-arrow {
+    @include arrow("./assets/images/icon-angle-left.svg", 0);
+  }
+  .right-arrow {
+    @include arrow("./assets/images/icon-angle-right.svg", 5.4vw);
+  }
+}
+
+.slideshow-img-mobile-js {
+  display: none;
+}
+
+
+@media screen and (max-width: 700px) {
+  .slideshow {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    &__desc {
+      height: 100%;
+      padding: 12vw 7vw;
+      h1 {
+        font-size: 7vw;
+      }
+      p {
+        color: variables.$dark-gray;
+        font-size: 3vw;
+        line-height: 5vw;
+      }
+      div {
+        bottom: 15vw;
+        gap: 6vw;
+        button {
+          letter-spacing: 2vw;
+          padding: 0;
+          font-size: 3vw;
+        }
+        img {
+          width: 7vw;
+        }
+      }
+      @mixin arrow($arrow-direction, $right) {
+    $size: 15vw;
+    width: $size;
+    height: $size;
+    bottom: 96vw;
+    right: $right;
+    left: initial;
+    background-color: variables.$black;
+    background-image: url($arrow-direction);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: center center;
+    transition: 0.3s ease-out;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .left-arrow {
+    @include arrow("./assets/images/icon-angle-left.svg", 15vw);
+  }
+  .right-arrow {
+    @include arrow("./assets/images/icon-angle-right.svg", 0);
+  }
+    }
+  }
+  .slideshow-img-js {
+    display: none;
+  }
+
+  .slideshow-img-mobile-js {
+    display: initial;
+  }
+}

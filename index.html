@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="global.css" />
+    <title>Frontend Mentor | Room homepage</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="./assets/images/icon-hamburger.svg"
+          class="hamburger"
+          onclick="hamburgerChange()"
+          alt="hamburger icon"
+        />
+        <img
+          src="./assets/images/icon-close.svg"
+          class="close-icon"
+          onclick="hamburgerChange()"
+          alt="hamburger close"
+        />
+        <img class="logo" src="./assets/images/logo.svg" alt="room's logo" />
+        <div class="nav__menu">
+          <a href="">home</a>
+          <a href="">shop</a>
+          <a href="">about</a>
+          <a href="">contact</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="darkness"></div>
+      <section class="slideshow">
+        <img
+          class="slideshow-img-js fade-in"
+          src="./assets/images/desktop-image-hero-1.jpg"
+          alt=""
+        />
+        <img
+          class="slideshow-img-mobile-js fade-in"
+          src="./assets/images/mobile-image-hero-1.jpg"
+          alt=""
+        />
+        <div class="slideshow__desc">
+          <h1 class="fade-in">Discover innovative ways to decorate</h1>
+          <p class="fade-in">
+            We provide unmatched quality, comfort, and style for property owners
+            across the country. Our experts combine form and function in
+            bringing your vision to life. Create a room in your own style with
+            our collection and make your property a reflection of you and what
+            you love.
+          </p>
+
+          <div>
+            <button>SHOP NOW</button>
+            <img src="./assets/images/icon-arrow.svg" alt="arrow" />
+          </div>
+          <span class="left-arrow"></span>
+          <span class="right-arrow"></span>
+        </div>
+      </section>
+      <section class="about">
+        <img
+          src="./assets/images/image-about-dark.jpg"
+          alt="image about dark"
+        />
+        <div class="about__desc">
+          <h2>ABOUT OUR FURNITURE</h2>
+          <p>
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </p>
+        </div>
+        <img
+          src="./assets/images/image-about-light.jpg"
+          alt="image about light"
+        />
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://www.github.com/peter9294">peter9294</a>.
+    </div>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
